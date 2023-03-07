@@ -1,0 +1,28 @@
+# Project: lab2_malloc
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ../lab1_Mi/main.o
+LINKOBJ  = ../lab1_Mi/main.o
+LIBS     = -L"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/include" -I"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/include" -I"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Users/julio/OneDrive/Escritorio/Studios/Embarcadero Devc++/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = lab2_malloc.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Users\julio\OneDrive\Escritorio\Studios\Embarcadero Devc++\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+../lab1_Mi/main.o: ../lab1_Mi/main.c
+	$(CC) -c ../lab1_Mi/main.c -o ../lab1_Mi/main.o $(CFLAGS)
